@@ -12,8 +12,8 @@ class Uppercase implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (strtoupper($value) !== $value) {
-            $fail('The :attribute must be uppercase.');
+        if (strtoupper($value[0]) !== $value[0]) {
+            $fail('The :attribute does not start with an uppercased letter');
         }
     }
 }
